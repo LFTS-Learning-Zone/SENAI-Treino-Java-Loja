@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class Conta {
 	
-	ArrayList<Venda> historicoVendas;
+	public ArrayList<Venda> historicoVendas;
 		
 	public Conta() 
 	{
@@ -20,8 +20,8 @@ public class Conta {
 		{
 			Venda venda = it.next();
 			System.out.println("Venda No - " + venda.id);
-			System.out.println("Cliente - " + venda.cliente);
-			System.out.println("Fornecedor - " + venda.fornecedor);
+			System.out.println("Cliente - " + venda.cliente.getNome());
+			System.out.println("Fornecedor - " + venda.fornecedor.getNome());
 			System.out.println("Valor Final - " + venda.valorFinal);
 			System.out.println("==================================");
 		}

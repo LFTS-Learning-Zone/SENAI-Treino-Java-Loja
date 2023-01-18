@@ -11,13 +11,22 @@ public class App {
 		Fornecedor f = new Fornecedor(999, "Mitsubishi");
 		
 		
-		Produto xampu = new Produto(1, "Xampu da Xuxa", 19.99, "Limpa todos dos baixinhos e baixinhas");
-		Produto escova = new Produto(2, "Escova de Cabelo", 45.50);
-		Venda venda = new Venda(10, f, c);
+		Produto xampu = new Produto("Xampu da Xuxa", 19.99, "Limpa todos dos baixinhos e baixinhas");
+		Produto escova = new Produto("Escova de Cabelo", 45.50);
+		Venda venda = new Venda(f, c);
 		
-		venda.InserirProduto(xampu);
-		venda.InserirProduto(escova);
-		venda.ExibirProdutos();		
+		
+		//venda.InserirProduto(xampu);
+		//venda.InserirProduto(escova);
+		//venda.ExibirProdutos();
+		
+		System.out.println(c.nome);
+		
+		
+		c.Comprar(escova, f);
+		c.conta.ExibirHistoricoVendas();
+		f.conta.ExibirHistoricoVendas();
+		
 	}
 
 }

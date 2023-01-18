@@ -9,17 +9,17 @@ public class Produto {
 	
 	public Produto() {}
 
-	public Produto(int id, String nome, double preco, String descricao) {
+	public Produto(String nome, double preco, String descricao) {
 		super();
-		this.id = id;
+		this.id = GlobalConfigurations.useGlobalProductIndex();
 		this.nome = nome;
 		this.descricao = descricao;
 		this.preco = preco;
 	}
 	
-	public Produto(int id, String nome, double preco) {
+	public Produto(String nome, double preco) {
 		super();
-		this.id = id;
+		this.id = GlobalConfigurations.useGlobalProductIndex();
 		this.nome = nome;
 		this.preco = preco;
 	}

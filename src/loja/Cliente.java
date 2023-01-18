@@ -1,46 +1,36 @@
 package loja;
 
 public class Cliente extends Entidade implements IRelacaoComercial {
-
-	Conta conta;
 	
 	public Cliente() {}
 	public Cliente(int id, String nome) {
 		super(id, nome);
-		this.conta = new Conta();
 	}
 
 	
 	@Override
 	public void Comprar(Produto produto, Fornecedor fornecedor) {
-		//Add produto para venda
-		//Add venda para historico venda da conta 
+		//Cria uma nova Venda
+		Venda venda = new Venda(fornecedor, this);
 		
-		//Add venda historico venda fornecedor
+		//Popula a venda com o produto escolhido 
+		venda.InserirProduto(produto);
 		
-		Venda venda = new Venda(GlobalConfigurations.useGlobalTransactionIndex(), fornecedor, this);
-		
-		//this.conta.InserirVenda();
-		
-		
-		
-		
+		//Adiciona esta venda ao historico do Cliente e Fornecedor
+		this.conta.historicoVendas.add(venda);		
+		fornecedor.conta.historicoVendas.add(venda);		
 	}
 	
 	
 	//Não implementa-se venda para cliente
 	@Override
 	public void Vender(Produto produto, Cliente cliente) {}
-
+	
 	@Override
 	public void Devolucao() {}
 
 	@Override
 	//Não será implementado alguma lógia de devolucao
-	public void Alugar() {}
-	
-	
-	
-	
+	public void Alugar() {}	
 
 }

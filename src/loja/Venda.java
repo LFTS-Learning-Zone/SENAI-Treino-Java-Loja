@@ -10,20 +10,23 @@ public class Venda {
 	Cliente cliente;
 	ArrayList<Produto> produtos = new ArrayList<Produto>();
 	
-	double valorFinal;
+	double valorFinal = 0;
 	
 	
 	public Venda() {}
 	
-	
-	public Venda(int id, Fornecedor fornecedor, Cliente cliente) {
-		super();
-		this.id = id;
+	/***
+	 * Cria uma venda entre fornecedor e cliente. O index(id) da venda é gerado automaticamente.
+	 * @param fornecedor Fornecedor da venda
+	 * @param cliente Comprador da venda
+	 */
+	public Venda(Fornecedor fornecedor, Cliente cliente) 
+	{
+		this.id = GlobalConfigurations.useGlobalTransactionIndex();
 		this.fornecedor = fornecedor;
 		this.cliente = cliente;
 	}
-
-
+	
 	public void ExibirProdutos()
 	{
 		Iterator<Produto> iterator = this.produtos.iterator();
@@ -43,21 +46,26 @@ public class Venda {
 	public void InserirProduto(Produto produto) 
 	{
 		this.produtos.add(produto);
+		this.valorFinal += produto.preco;
 	}
 	
 	public void RemoverProduto(Produto produto) 
 	{
 		this.produtos.remove(produto);
+		this.valorFinal -= produto.preco;
 	}
 	
+
 	public void RemoverProdutoNoIndex(int index) 
 	{
 		this.produtos.remove(index);
+		this.valorFinal -= this.produtos.get(index).preco;
 	}
 	
 	public void LimparProdutos() 
 	{
 		this.produtos.clear();
+		this.valorFinal = 0;
 	}
 
 }
