@@ -3,6 +3,8 @@ package loja;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import loja.Configurations.GlobalConfigurations;
+
 public class Venda {
 
 	int id;

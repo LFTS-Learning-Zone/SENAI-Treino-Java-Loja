@@ -1,6 +1,9 @@
-package loja;
+package loja.Interfaces;
 
 import java.util.ArrayList;
+
+import loja.Fornecedor;
+import loja.Produto;
 
 public interface IComercioAquisitivo {
 

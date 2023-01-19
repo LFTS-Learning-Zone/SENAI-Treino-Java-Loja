@@ -2,6 +2,8 @@ package loja;
 
 import java.util.ArrayList;
 
+import loja.Interfaces.IComercioAquisitivo;
+
 public class Cliente extends Entidade implements IComercioAquisitivo {
 	
 	public Cliente() {}

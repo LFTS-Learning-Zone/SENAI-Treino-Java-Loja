@@ -1,5 +1,7 @@
 package loja;
 
+import loja.Configurations.GlobalConfigurations;
+
 public class Produto {
 
 	int id;

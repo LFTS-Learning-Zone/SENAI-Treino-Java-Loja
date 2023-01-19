@@ -1,5 +1,7 @@
 package loja;
 
+import java.util.ArrayList;
+
 public class App {
 
 	public App() {
@@ -22,8 +24,11 @@ public class App {
 		
 		System.out.println(c.nome);
 		
+		//Depreciado
+		//c.Comprar(escova, f);
 		
-		c.Comprar(escova, f);
+		c.Comprar(new ArrayList<Produto>(), f);
+		
 		c.conta.ExibirHistoricoVendas();
 		f.conta.ExibirHistoricoVendas();
 		

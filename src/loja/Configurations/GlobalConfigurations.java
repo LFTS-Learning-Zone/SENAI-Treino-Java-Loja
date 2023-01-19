@@ -1,4 +1,4 @@
-package loja;
+package loja.Configurations;
 
 public final class GlobalConfigurations {
 	private static int GLOBAL_TRANSACTION_INDEX = 0;	

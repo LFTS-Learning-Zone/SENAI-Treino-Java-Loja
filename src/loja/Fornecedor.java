@@ -1,5 +1,7 @@
 package loja;
 
+import loja.Interfaces.IComercioVenda;
+
 public class Fornecedor extends Entidade implements IComercioVenda {
 
 	
